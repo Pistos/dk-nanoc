@@ -18,11 +18,7 @@ nanoc_compile_proc = Proc.new do |buffer|
           output = `pushd #{path}; nanoc compile; popd >/dev/null`.split( /\n/ )[-1]
           $diakonos.set_iline output
           break
-        else
-          $diakonos.debug_log "no output_dir found in #{path}/config.yaml"
         end
-      else
-        $diakonos.debug_log "no config found in #{path}"
       end
 
       path = path.parent

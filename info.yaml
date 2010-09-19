@@ -1,0 +1,20 @@
+name: nanoc
+description: A nanoc extension for Diakonos
+author:
+    name: Pistos
+    uri: http://pist0s.ca
+version: 1.0.0
+uris:
+    homepage: http://github.com/Pistos/dk-nanoc
+    repository: git://github.com/Pistos/dk-nanoc.git
+licence: MIT
+requirements:
+    diakonos:
+        minimum: 0.8.11
+        tested:
+            - 0.8.13
+notes: >
+    This extension provides nanoc-related features for Diakonos.
+
+    After saving a file, if that file is part of a nanoc site, the site will
+    be compiled with nanoc.

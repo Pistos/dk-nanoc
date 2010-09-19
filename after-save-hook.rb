@@ -2,11 +2,12 @@ require 'pathname'
 require 'yaml'
 
 nanoc_compile_proc = Proc.new do |buffer|
-  break  if buffer.nil?
-  break  if buffer.name.nil?
+  next  if buffer.nil?
+  next  if buffer.name.nil?
+  next  if buffer.name =~ /\.(?:css|js)$/
 
   path = Pathname.new( buffer.name ).dirname
-  break  if ! path.exist?
+  next  if ! path.exist?
 
   last_path = nil
   loop do
